@@ -7,10 +7,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Oda2/hapi-boilerplate"
   },
   "bugs": {
-
+    "url": "https://github.com/Oda2/hapi-boilerplate/issues"
   },
   "scripts": {
     "dev": "node_modules/.bin/nodemon index.js",

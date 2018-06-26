@@ -5,7 +5,7 @@ module.exports = {
     server.route(
       {
         method: 'GET',
-        path: '/autenticacao',
+        path: '/auth',
         options: {
           handler: async (request, reply) => {
             return reply.response({ code: 1 }).code(201);
