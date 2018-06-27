@@ -13,7 +13,7 @@
     "url": "https://github.com/Oda2/hapi-boilerplate/issues"
   },
   "scripts": {
-    "dev": "node_modules/.bin/nodemon index.js",
+    "dev": "./node_modules/.bin/nodemon index.js",
     "lint": "./node_modules/.bin/eslint . --ext .js"
   },
   "dependencies": {
@@ -22,9 +22,12 @@
     "dotenv": "^6.0.0",
     "hapi": "^17.5.1",
     "hapi-auth-jwt2": "^8.1.0",
+    "hapi-swagger": "^9.1.1",
+    "inert": "^5.1.0",
     "joi": "^13.4.0",
     "lodash": "^4.17.10",
-    "mongoose": "^5.1.6"
+    "mongoose": "^5.1.6",
+    "vision": "^5.3.3"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.20",
