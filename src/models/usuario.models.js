@@ -9,7 +9,8 @@ const UsuarioSchema = new mongoose.Schema({
   admin: { type: Boolean, default: false },
   loja: String,
   facebook_id: String,
-  google_id: String
+  google_id: String,
+  ativo: { type: Boolean, default: false }
 });
 
 UsuarioSchema.methods.checarSenha = function (body) { 

@@ -24,7 +24,7 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
 
-"@types/hapi@^17.0.12":
+"@types/hapi@*", "@types/hapi@^17.0.12":
   version "17.0.12"
   resolved "https://registry.yarnpkg.com/@types/hapi/-/hapi-17.0.12.tgz#5751f4d8db4decb4eae6671a4efbeae671278ceb"
   dependencies:
@@ -36,6 +36,12 @@
     "@types/node" "*"
     "@types/podium" "*"
     "@types/shot" "*"
+
+"@types/inert@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@types/inert/-/inert-5.1.1.tgz#316054a71a024e20a87369f9b7299093c2461703"
+  dependencies:
+    "@types/hapi" "*"
 
 "@types/iron@*":
   version "5.0.1"
@@ -90,6 +96,12 @@
   resolved "https://registry.yarnpkg.com/@types/shot/-/shot-3.4.0.tgz#459477c5187d3ebd303660ab099e7e9e0f3b656f"
   dependencies:
     "@types/node" "*"
+
+"@types/vision@^5.3.4":
+  version "5.3.4"
+  resolved "https://registry.yarnpkg.com/@types/vision/-/vision-5.3.4.tgz#382095cc60bd0ddb4a4a6d0df0fc2fea31b2c58b"
+  dependencies:
+    "@types/hapi" "*"
 
 abbrev@1:
   version "1.1.1"
