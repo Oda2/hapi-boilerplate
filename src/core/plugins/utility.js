@@ -10,7 +10,6 @@ module.exports = {
 
         const _options = {
           plugin: require(route),
-          // options: { database: db },
           routes: {
             prefix: '/v1'
           }
@@ -26,7 +25,6 @@ module.exports = {
       return await server.register(registerRoutes);
     };
 
-    // await server.method('loadModels', loadModels);
     await server.method('loadRoutes', loadRoutes);
   },
   name: 'utility',
