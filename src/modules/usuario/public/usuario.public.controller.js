@@ -17,8 +17,11 @@ const create = async (request, reply) => {
 const getMe = async (request, reply) => {
   try {
     const { Usuario } = request.database.models;
+    const credentials = request.auth.credentials;
 
-    return {};
+    const _usuario = await Usuario.findById(credentials.id);
+    if (!_usuario) return reply.notFound();
+    return _usuario;
   } catch (err) {
     return reply.badImplementationCustom(err);
   }
