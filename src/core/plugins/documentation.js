@@ -34,7 +34,11 @@ module.exports = {
           'in': 'header'
         }
       },
-      security: [{ 'Bearer ': [] }]
+      security: [{ 'Bearer ': [] }],
+      tags: [
+        { 'name': 'auth', 'description': 'Autenticação' },
+        { 'name': 'usuario', 'description': 'Usuário' }
+      ]
     };
 
     await server.register([

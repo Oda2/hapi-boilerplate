@@ -15,10 +15,18 @@ const create = () => ({
     email: schema.email.required(),
     facebook: schema.facebook.optional(),
     google: schema.google.optional(),
-    loja: schema.loja.optional()
+    ativo: schema.ativo.required(),
+    acesso: schema.acesso.optional().default('public')
   }).label('Usuario')
 });
 
+const getMe = () => ({
+  options: {
+    stripUnknown: true
+  }
+});
+
 module.exports = {
-  create
+  create,
+  getMe
 };

@@ -26,6 +26,10 @@ module.exports = {
     };
 
     await server.method('loadRoutes', loadRoutes);
+
+    await server.register({
+      plugin: require('hapi-boom-decorators')
+    });
   },
   name: 'utility',
   version: '1.0.0'

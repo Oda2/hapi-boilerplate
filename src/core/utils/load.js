@@ -11,7 +11,10 @@ const getServer = () => ({
 
 const getDatabase = () => ({ host: process.env.DATABASE || process.env['DATABASE'] || 'mongodb://localhost:27017' });
 
+const getKeyAuth = () => ({ key: process.env.KEYAUTH || 'bbEight' });
+
 module.exports = {
   getServer,
-  getDatabase
+  getDatabase,
+  getKeyAuth
 };

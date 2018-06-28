@@ -5,7 +5,20 @@ const list = async (request, reply) => {
     const { Usuario } = request.database.models;
     const usuarios = await Usuario.find().exec();
 
-    return reply.response(usuarios);
+    return usuarios;
+  } catch (err) {
+    return reply.badImplementationCustom(err);
+  }
+};
+
+const get = async (request, reply) => {
+  try {
+    const { Usuario } = request.database.models;
+
+    const usuario = await Usuario.findById(request.params.id);
+
+    if (!usuario) return reply.notFound();
+    return usuario;
   } catch (err) {
     return reply.badImplementationCustom(err);
   }
@@ -25,7 +38,36 @@ const create = async (request, reply) => {
   }
 };
 
+const update = async (request, reply) => {
+  try {
+    const { Usuario } = request.database.models;
+
+    const usuario = await Usuario.findByIdAndUpdate(request.params.id, request.payload, { upsert: true });
+
+    if (!usuario) return reply.notFound();
+    return usuario;
+  } catch (err) {
+    return reply.badImplementationCustom(err);
+  }
+};
+
+const destroy = async (request, reply) => {
+  try {
+    const { Usuario } = request.database.models;
+
+    const usuario = await Usuario.remove({ _id: request.params.id });
+
+    if (!usuario) return reply.notFound();
+    return reply.response({}).code(202);
+  } catch (err) {
+    return reply.badImplementationCustom(err);
+  }
+};
+
 module.exports = {
   list,
-  create
+  get,
+  create,
+  update,
+  destroy
 };

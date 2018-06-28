@@ -14,6 +14,17 @@ const create = async (request, reply) => {
   }
 };
 
+const getMe = async (request, reply) => {
+  try {
+    const { Usuario } = request.database.models;
+
+    return {};
+  } catch (err) {
+    return reply.badImplementationCustom(err);
+  }
+};
+
 module.exports = {
-  create
+  create,
+  getMe
 };

@@ -1,27 +1,46 @@
 'use strict';
 
+const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 
 const UsuarioSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   senha: { type: String, required: true },
   nome: String,
-  admin: { type: Boolean, default: false },
-  loja: String,
+  acesso: { type: String, default: 'public' },
   facebook_id: String,
   google_id: String,
   ativo: { type: Boolean, default: false }
 });
 
-UsuarioSchema.methods.checarSenha = function (body) { 
-  if (body.facebook_id) {
-    return (body.facebook_id == this.facebook_id);
-  } if (body.google_id) {
-    return (body.google_id == this.google_id);
+UsuarioSchema.pre('save', function (next) {
+  const _usuario = this;
+  if (!_usuario.isModified('senha')) return next();
+
+  _usuario.senha = criptografarSenha(_usuario.senha);
+  return next();
+});
+
+UsuarioSchema.pre('findOneAndUpdate', (next) => {
+  const senha = criptografarSenha(this.getUpdate().$set.password);
+  if (!senha) return next();
+  this.findOneAndUpdate({}, { senha: senha } );
+});
+
+UsuarioSchema.methods.checarSenha = function (payload) { 
+  if (payload.facebook_id) {
+    return (payload.facebook_id == this.facebook_id);
+  } if (payload.google_id) {
+    return (payload.google_id == this.google_id);
   }  
   else {
-    return (body.senha == this.senha);
+    return bcrypt.compareSync(payload.senha, this.senha);
   }
+};
+
+const criptografarSenha = (senha) => {
+  if (!senha) return false;
+  return bcrypt.hashSync(senha, bcrypt.genSaltSync(8), null);
 };
 
 module.exports = mongoose.model('Usuario', UsuarioSchema);

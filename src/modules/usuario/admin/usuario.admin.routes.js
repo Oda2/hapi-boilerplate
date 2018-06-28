@@ -10,7 +10,9 @@ module.exports = {
         method: 'GET',
         path: '/usuario/admin',
         config: {
-          auth: false,
+          auth: {
+            scope: ['admin']
+          },
           handler: Controller.list
         }
       },
@@ -18,9 +20,44 @@ module.exports = {
         method: 'POST',
         path: '/usuario/admin',
         config: {
-          auth: false,
+          auth: {
+            scope: ['admin']
+          },
           handler: Controller.create,
           validate: Validator.create()
+        }
+      },
+      {
+        method: 'GET',
+        path: '/usuario/admin/{id}',
+        config: {
+          auth: {
+            scope: ['admin']
+          },
+          handler: Controller.get,
+          validate: Validator.get()
+        }
+      },
+      {
+        method: 'PUT',
+        path: '/usuario/admin/{id}',
+        config: {
+          auth: {
+            scope: ['admin']
+          },
+          handler: Controller.update,
+          validate: Validator.update()
+        }
+      },
+      {
+        method: 'DELETE',
+        path: '/usuario/admin/{id}',
+        config: {
+          auth: {
+            scope: ['admin']
+          },
+          handler: Controller.destroy,
+          validate: Validator.get()
         }
       }
     ]);

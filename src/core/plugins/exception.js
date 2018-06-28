@@ -6,18 +6,22 @@ module.exports = {
   register: async (server) => {
     const badImplementationCustom = (err) => {
       if (!err) {
-        return this.response(Boom.badImplementation('method not implemented'));
+        throw Boom.badImplementation('method not implemented');
       }
+
+      if (err.isBoom) return err;
   
       if (!err.name) {
-        return this.response(Boom.badRequest(err));
+        throw Boom.badRequest(err);
       }
   
       switch (err.name) {
       case 'AttributesInvalidError':
-        return this.response(Boom.badData('fields invalid header'));
+        throw Boom.badData('fields invalid header');
+      case 'CastError':
+        throw Boom.badRequest();
       default:
-        return this.response(Boom.badImplementation(err.message));
+        throw Boom.badImplementation(err.message);
       }
     };
   

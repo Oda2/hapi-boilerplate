@@ -18,11 +18,13 @@
     "lint": "./node_modules/.bin/eslint . --ext .js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "bluebird": "^3.5.1",
     "boom": "^7.2.0",
     "dotenv": "^6.0.0",
     "hapi": "^17.5.1",
     "hapi-auth-jwt2": "^8.1.0",
+    "hapi-boom-decorators": "^4.1.0",
     "hapi-swagger": "^9.1.1",
     "inert": "^5.1.0",
     "joi": "^13.4.0",
@@ -31,6 +33,7 @@
     "vision": "^5.3.3"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.1",
     "@types/bluebird": "^3.5.20",
     "@types/boom": "^7.2.0",
     "@types/hapi": "^17.0.12",

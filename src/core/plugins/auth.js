@@ -3,13 +3,18 @@
 const jwt = require('hapi-auth-jwt2');
 const jsonWebToken = require('jsonwebtoken');
 
-const key = process.env.KEYAUTH || 'bbEight';
+const { getKeyAuth } = require('../utils/load');
+
+const config = getKeyAuth();
 
 const validate = async function (decoded, request) {
   const _token = request.headers.authorization.replace('Bearer ', '');
 
-  jsonWebToken.verify(_token, key, (err, decoded) => {
+  return jsonWebToken.verify(_token, config.key, async (err, decoded) => {
     if (err) return { isValid: false };
+    const { Usuario } = request.database.models;
+    const _usaurio = await Usuario.findOne({ _id: decoded.id, ativo: true } );
+    if (!_usaurio) return { isValid: false };
     return { isValid: true };
   });
 };
@@ -19,7 +24,8 @@ module.exports = {
     await server.register(jwt);
 
     server.auth.strategy('jwt', 'jwt',
-      { key: key,
+      {
+        key: config.key,
         validate: validate,
         verifyOptions: {
           algorithms: [ 'HS256' ]
