@@ -3,7 +3,9 @@
 # Ignore build directory
 dist/*
 coverage/*
+public/*
 .gitlab/*
+.github/*
 
 # Ignore files test
 *.spec.js
