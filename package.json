@@ -16,7 +16,8 @@
     "start": "index.js",
     "dev": "./node_modules/.bin/nodemon index.js",
     "test": "./node_modules/.bin/lab -l -v -m 60000 -r console -o stdout -r html -o coverage/coverage.html -r lcov -o coverage/lcov.info --pattern 'spec' src/test/index.spec.js src/modules/$1",
-    "lint": "./node_modules/.bin/eslint . --ext .js"
+    "lint": "./node_modules/.bin/eslint . --ext .js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -50,6 +51,7 @@
     "@types/node": "^10.3.3",
     "@types/vision": "^5.3.4",
     "code": "^5.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
