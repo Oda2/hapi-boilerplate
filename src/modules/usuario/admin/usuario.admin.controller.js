@@ -29,7 +29,7 @@ const create = async (request, reply) => {
     const { Usuario } = request.database.models;
     const payload = request.payload;
 
-    const _usuario = await Usuario.find({ email: payload.email }).exec();
+    const _usuario = await Usuario.findOne({ email: payload.email }).exec();
 
     if (_usuario) return reply.badRequest();
 
