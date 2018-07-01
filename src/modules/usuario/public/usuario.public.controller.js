@@ -5,6 +5,10 @@ const create = async (request, reply) => {
     const { Usuario } = request.database.models;
     const payload = request.payload;
 
+    const _usuario = await Usuario.find({ email: payload.email }).exec();
+
+    if (_usuario) return reply.badRequest();
+
     const novoUsuario = new Usuario(payload);
     await novoUsuario.save();
 
