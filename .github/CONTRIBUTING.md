@@ -1,6 +1,6 @@
 # Contribuindo
 
-Obrigado pelo seu interesse em contribuir para este projeto de template! : tada:
+Obrigado pelo seu interesse em contribuir para este projeto de template! :tada:
 
 ### Criando um problema
 
