@@ -1,6 +1,7 @@
 # Hapi Boilerplate
 
 [![CircleCI](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/Oda2/hapi-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/Oda2/hapi-boilerplate?branch=master)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2c9ae7c3b080774f2a22/test_coverage)](https://codeclimate.com/github/Oda2/hapi-boilerplate/test_coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/Oda2/hapi-boilerplate/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Oda2/hapi-boilerplate?targetFile=package.json)
 
