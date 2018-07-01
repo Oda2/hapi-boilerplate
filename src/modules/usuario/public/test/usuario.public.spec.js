@@ -10,7 +10,8 @@ describe('Usuario public', () => {
         payload: {
           nome: 'Renato Oda',
           senha: 'abc123',
-          email: 'renato.oda@email.com.br'
+          email: 'renato.oda@email.com.br',
+          ativo: true
         }
       });
 
@@ -24,7 +25,8 @@ describe('Usuario public', () => {
         payload: {
           nome: 'Renato Oda',
           senha: 'abc123',
-          email: 'renato.oda@email.com.br'
+          email: 'renato.oda@email.com.br',
+          ativo: false
         }
       });
 

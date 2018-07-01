@@ -1,6 +1,6 @@
 # Hapi Boilerplate
 
-[![CircleCI](https://circleci.com/gh/Oda2/graphql-api-estudo.svg?style=svg)](https://circleci.com/gh/Oda2/hapi-boilerplate)
+[![CircleCI](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master.svg?style=svg)](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master)
 
 Este é um boilerplate baseado no projeto [hapi-api-boilerplate](https://github.com/FernandoCagale/hapi-api-boilerplate) que utiliza Hapi.js e Sequelize, porém foi alterado para aplicar os frameworks Hapi.js v17+ e Mongoose (MongoDb).
 
