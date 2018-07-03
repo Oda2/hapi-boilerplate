@@ -1,40 +1,32 @@
 'use strict';
 
 const criarUsuario = async (server) => {
-  try {
-    const data = await server.inject({
-      method: 'POST',
-      url: '/v1/usuario',
-      payload: {
-        nome: 'Renato Oda',
-        email: 'renato.oda2@gmail.com',
-        senha: 'abc123',
-        ativo: true,
-        acesso: 'admin'
-      }
-    });
+  const data = await server.inject({
+    method: 'POST',
+    url: '/v1/usuario',
+    payload: {
+      nome: 'Renato Oda',
+      email: 'renato.oda2@gmail.com',
+      senha: 'abc123',
+      ativo: true,
+      acesso: 'admin'
+    }
+  });
 
-    return data;
-  } catch (err) {
-    throw err;
-  }
+  return data;
 };
 
 const getToken = async (server) => {
-  try {
-    const data = await server.inject({
-      method: 'POST',
-      url: '/v1/auth',
-      payload: {
-        email: 'renato.oda2@gmail.com',
-        senha: 'abc123'
-      }
-    });
+  const data = await server.inject({
+    method: 'POST',
+    url: '/v1/auth',
+    payload: {
+      email: 'renato.oda2@gmail.com',
+      senha: 'abc123'
+    }
+  });
 
-    return data.result.access_token;
-  } catch (err) {
-    throw err;
-  }
+  return data.result.access_token;
 };
 
 module.exports = {

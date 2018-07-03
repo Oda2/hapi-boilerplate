@@ -21,10 +21,11 @@ UsuarioSchema.pre('save', function (next) {
   return next();
 });
 
-UsuarioSchema.pre('findOneAndUpdate', (next) => {
-  const senha = criptografarSenha(this.getUpdate().$set.password);
+UsuarioSchema.pre('findOneAndUpdate', function (next) {
+  const senha = criptografarSenha(this.getUpdate().senha);
   if (!senha) return next();
   this.findOneAndUpdate({}, { senha: senha } );
+  return next();
 });
 
 UsuarioSchema.methods.checarSenha = function (payload) { 

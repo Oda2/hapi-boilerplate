@@ -1,6 +1,12 @@
 /* global describe, before, it, expect, server */
 
+const factory = require('../../../../test/factory.usuario');
+
 describe('Usuario public', () => {
+
+  before(async () => {
+    token = await factory.getToken(server);
+  });
 
   describe('Cadastro', () => {
     it('Deve cadastrar um novo usuario', async () => {
@@ -45,6 +51,23 @@ describe('Usuario public', () => {
       });
 
       expect(data.statusCode).to.equals(400);
+    });
+  });
+
+  describe('Consulta', () => {
+    it('Deve retornar os dados do usuário pelo Token', async () => {
+      const data = await server.inject({
+        method: 'GET',
+        url: '/v1/usuario',
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      expect(data.statusCode).to.equals(200);
+      expect(data.result).to.exists();
+      expect(data.result.nome).to.exists();
+      expect(data.result.email).to.exists();
+      expect(data.result.nome).to.equals('Renato Oda');
+      expect(data.result.email).to.equals('renato.oda2@gmail.com');
     });
   });
 

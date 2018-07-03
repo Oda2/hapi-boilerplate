@@ -3,7 +3,7 @@
 const list = async (request, reply) => {
   try {
     const { Usuario } = request.database.models;
-    const usuarios = await Usuario.find().exec();
+    const usuarios = await Usuario.find().skip(request.offset()).limit(request.limit()).exec();
 
     return usuarios;
   } catch (err) {

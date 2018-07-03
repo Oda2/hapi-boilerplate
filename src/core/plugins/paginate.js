@@ -4,9 +4,11 @@ module.exports = {
   register: async (server, options) => {
     const limitDefault = options.limit || 15;
 
-    const limit = () => ( this.query.limit || limitDefault );
+    const limit = function () {
+      return this.query.limit || limitDefault ;
+    };
 
-    const offset = () => {
+    const offset = function () {
       const page = this.query.page || 1;
       if (page) {
         return limit.call(this) * (page - 1);
@@ -15,7 +17,8 @@ module.exports = {
       return 0;
     };
 
-    return await server.decorate('request', 'pagination', { limit, offset });
+    await server.decorate('request', 'limit', limit);
+    return await server.decorate('request', 'offset', offset);
   },
   name: 'hapi-paginate',
   version: '1.0.0'
