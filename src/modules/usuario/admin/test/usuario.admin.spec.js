@@ -26,8 +26,12 @@ describe('Usuario admin', () => {
 
       expect(data.statusCode).to.equals(201);
       expect(data.result.id).to.exists();
+      expect(data.result.nome).to.exists();
+      expect(data.result.email).to.exists();
+      expect(data.result.nome).to.equals('Renato Oda');
+      expect(data.result.email).to.equals('renato.oda5@email.com.br');
 
-      let id = data.result.id;
+      id = data.result.id;
     });
 
     it('Deve retornar um erro ao tentar cadastrar um usuário com um e-mail existente', async () => {
@@ -60,6 +64,30 @@ describe('Usuario admin', () => {
       });
 
       expect(data.statusCode).to.equals(400);
+    });
+  });
+
+  describe('Consulta', () => {
+    it('Deve retornar uma listagem de usuários', async () => {
+      const data = await server.inject({
+        method: 'GET',
+        url: '/v1/usuario/admin',
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      expect(data.statusCode).to.equals(200);
+      expect(data.result).to.exists();
+    });
+
+    it('Deve retornar uma usuário pelo identificador', async () => {
+      const data = await server.inject({
+        method: 'GET',
+        url: `/v1/usuario/admin/${id}`,
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      expect(data.statusCode).to.equals(200);
+      expect(data.result).to.exists();
     });
   });
 

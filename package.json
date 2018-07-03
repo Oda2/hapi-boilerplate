@@ -27,7 +27,7 @@
     "good": "^8.1.1",
     "good-console": "^7.1.0",
     "good-squeeze": "^5.1.0",
-    "hapi": "^17.5.1",
+    "hapi": "^17.5.2",
     "hapi-auth-jwt2": "^8.1.0",
     "hapi-boom-decorators": "^4.1.0",
     "hapi-swagger": "^9.1.1",
