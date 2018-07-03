@@ -9,7 +9,8 @@ const criarUsuario = async (server) => {
         nome: 'Renato Oda',
         email: 'renato.oda2@gmail.com',
         senha: 'abc123',
-        ativo: true
+        ativo: true,
+        acesso: 'admin'
       }
     });
 
@@ -30,7 +31,7 @@ const getToken = async (server) => {
       }
     });
 
-    return data;
+    return data.result.access_token;
   } catch (err) {
     throw err;
   }

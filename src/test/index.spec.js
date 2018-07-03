@@ -34,5 +34,6 @@ global.describe('===> load the bootstrap', () => {
     const usuario = await factory.criarUsuario(global.server);
     global.expect(usuario).to.exist();;
     global.expect(usuario.statusCode).to.equals(201);
+    global.expect(usuario.result.email).to.exist();
   });
 });

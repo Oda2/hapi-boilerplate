@@ -6,15 +6,11 @@ describe('Usuario admin', () => {
   let token = null;
   let id = null;
   
-  before(() => {
-    factory.getToken(server)
-      .then((context) => {
-        token = context.access_token;
-      });
+  before(async () => {
+    token = await factory.getToken(server);
   });
 
   describe('Cadastro', () => {
-    /*
     it('Deve cadastrar um novo usuario', async () => {
       const data = await server.inject({
         method: 'POST',
@@ -29,9 +25,9 @@ describe('Usuario admin', () => {
       });
 
       expect(data.statusCode).to.equals(201);
-      expect(data.id).to.exists();
+      expect(data.result.id).to.exists();
 
-      let id = data.id;
+      let id = data.result.id;
     });
 
     it('Deve retornar um erro ao tentar cadastrar um usuário com um e-mail existente', async () => {
@@ -49,7 +45,6 @@ describe('Usuario admin', () => {
 
       expect(data.statusCode).to.equals(400);
     });
-    */
 
     it('Deve retornar erro ao tentar cadastrar um usuário com informações erradas na requisição', async () => {
       const data = await server.inject({
