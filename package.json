@@ -15,7 +15,7 @@
   "scripts": {
     "start": "index.js",
     "dev": "./node_modules/.bin/nodemon index.js",
-    "test": "./node_modules/.bin/lab -l -v -m 60000 -r console -o stdout -r html -o coverage/coverage.html -r lcov -o coverage/lcov.info --pattern 'spec' src/test/index.spec.js src/modules/$1",
+    "test": "./node_modules/.bin/lab -l -v -m 60000 -r console --coverage -o stdout -r html -o coverage/coverage.html -r lcov -o coverage/lcov.info --pattern 'spec' src/test/index.spec.js src/modules/$1",
     "lint": "./node_modules/.bin/eslint . --ext .js",
     "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
