@@ -17,7 +17,7 @@
     "dev": "./node_modules/.bin/nodemon index.js",
     "test": "./node_modules/.bin/lab -l -v -m 60000 -r console -o stdout -r html -o coverage/coverage.html -r lcov -o coverage/lcov.info --pattern 'spec' src/test/index.spec.js src/modules/$1",
     "lint": "./node_modules/.bin/eslint . --ext .js",
-    "coveralls": "cat ./coverage/lcov.info | coveralls"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -34,21 +34,21 @@
     "inert": "^5.1.0",
     "joi": "^13.4.0",
     "lodash": "^4.17.10",
-    "mongoose": "^5.1.6",
+    "mongoose": "^5.2.2",
     "vision": "^5.3.3"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.1",
-    "@types/bluebird": "^3.5.20",
+    "@types/bluebird": "^3.5.21",
     "@types/boom": "^7.2.0",
     "@types/code": "^4.0.4",
-    "@types/hapi": "^17.0.12",
+    "@types/hapi": "^17.0.15",
     "@types/inert": "^5.1.1",
     "@types/joi": "^13.3.0",
     "@types/lab": "^11.1.0",
-    "@types/lodash": "^4.14.109",
-    "@types/mongoose": "^5.0.17",
-    "@types/node": "^10.3.3",
+    "@types/lodash": "^4.14.111",
+    "@types/mongoose": "^5.2.0",
+    "@types/node": "^10.5.2",
     "@types/vision": "^5.3.4",
     "code": "^5.2.0",
     "coveralls": "^3.0.2",
@@ -61,7 +61,7 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
     "lab": "^15.5.0",
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.18.1"
   },
   "engines": {
     "node": ">=8"
