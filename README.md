@@ -1,5 +1,6 @@
 # Hapi Boilerplate
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fc69496b2eb94fcd8e34ee7f76527281)](https://app.codacy.com/app/Oda2/hapi-boilerplate?utm_source=github.com&utm_medium=referral&utm_content=Oda2/hapi-boilerplate&utm_campaign=badger)
 [![CircleCI](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master.svg?style=shield)](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/Oda2/hapi-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/Oda2/hapi-boilerplate?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2c9ae7c3b080774f2a22/maintainability)](https://codeclimate.com/github/Oda2/hapi-boilerplate/maintainability)
