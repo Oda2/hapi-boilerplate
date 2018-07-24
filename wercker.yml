@@ -1,9 +1,6 @@
 # Qual é a imagem base que vou utilizar
 box: node:8
 
-services:
-  - mongo:latest
-
 # Definição do primeiro step
 build:
   steps:
@@ -19,6 +16,8 @@ build:
 
 # Definição do step de testes (como precisa de um service, preciso entender como funciona isso no wercker)
 test:
+  services:
+    - mongo:latest
   steps:
     - script:
       name: test

@@ -9,7 +9,10 @@ const getServer = () => ({
   port: process.env.PORT || process.env['SERVER_PORT'] || '4000'
 });
 
-const getDatabase = () => ({ host: process.env.DATABASE || process.env['DATABASE'] || 'mongodb://localhost:27017' });
+const getDatabase = () => ({ host: process.env.DATABASE || 
+                             process.env['DATABASE'] || 
+                             process.env['MONGODB_URL'] || 
+                             'mongodb://localhost:27017' });
 
 const getKeyAuth = () => ({ key: process.env.KEYAUTH || 'bbEight' });
 
