@@ -1,6 +1,9 @@
 # Qual é a imagem base que vou utilizar
 box: node:8
 
+services:
+  - mongo:latest
+
 # Definição do primeiro step
 build:
   steps:
