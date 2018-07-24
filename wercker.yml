@@ -5,26 +5,19 @@ box: node:8
 build:
   steps:
     - script:
-      name: install yarn
-      code: |
-        npm install -g yarn
-    
-    - script:
-      name: set yarn cache
-      code: |
-        export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
-    
-    - script:
       name: install dependencies
       code: |
-        HOME=$YARN_CACHE yarn
+        yarn install
     
     - script:
-      name: build
+      name: eslint
       code: |
-        npm run build
+        yarn run eslint
 
-# Definição do step de testes
+# Definição do step de testes (como precisa de um service, preciso entender como funciona isso no wercker)
 test:
   steps:
-    - yarn-test
+    - script:
+      name: test
+      code: |
+        yarn run test || true

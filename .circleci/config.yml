@@ -24,7 +24,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn run lint
+      - run: yarn run eslint
       - run: yarn run test
       - run: yarn run coveralls
 
@@ -52,7 +52,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       # run tests!
-      - run: yarn run lint
+      - run: yarn run eslint
       - run: yarn run test
       - run: yarn run coveralls
 

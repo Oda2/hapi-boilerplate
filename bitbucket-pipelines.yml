@@ -9,7 +9,7 @@ pipelines:
           - node
         script:
           - yarn install
-          - yarn run lint
+          - yarn run eslint
     - step:
         name: Deploy to Heroku
         deployment: test
