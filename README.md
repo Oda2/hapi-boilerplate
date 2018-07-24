@@ -1,6 +1,7 @@
 # Hapi Boilerplate
 
 [![CircleCI](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master.svg?style=shield)](https://circleci.com/gh/Oda2/hapi-boilerplate/tree/master)
+[![wercker status](https://app.wercker.com/status/d73cebc432dcdf420d6c512e5c9e8436/s/master "wercker status")](https://app.wercker.com/project/byKey/d73cebc432dcdf420d6c512e5c9e8436)
 [![Coverage Status](https://coveralls.io/repos/github/Oda2/hapi-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/Oda2/hapi-boilerplate?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/2c9ae7c3b080774f2a22/maintainability)](https://codeclimate.com/github/Oda2/hapi-boilerplate/maintainability)
 [![Known Vulnerabilities](https://snyk.io/test/github/Oda2/hapi-boilerplate/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Oda2/hapi-boilerplate?targetFile=package.json)
