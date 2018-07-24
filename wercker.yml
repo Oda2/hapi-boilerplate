@@ -2,15 +2,15 @@
 box: node:8
 
 # Definição do primeiro step
-#build:
-#  steps:
-#    - yarn-install
-#    - script:
-#      name: gerar tag de imagem
-#      code: |
-#        export PACKAGE_VERSION=$(node -p "require('./package.json').version")
-#        export IMAGE_TAG=$PACKAGE_VERSION
-#        echo "$IMAGE_TAG" >> $WERCKER_SOURCE_DIR/.image_tag
+build:
+  steps:
+    - yarn-install
+    - script:
+      name: gerar tag de imagem
+      code: |
+        export PACKAGE_VERSION=$(node -p "require('./package.json').version")
+        export IMAGE_TAG=$PACKAGE_VERSION
+        echo "$IMAGE_TAG" >> $WERCKER_SOURCE_DIR/.image_tag
 
 # Definição do step de testes
 test:
