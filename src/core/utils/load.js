@@ -11,7 +11,8 @@ const getServer = () => ({
 
 const getDatabase = () => ({ host: process.env.DATABASE || 
                              process.env['DATABASE'] || 
-                             process.env['MONGODB_URL'] || 
+                             process.env['MONGODB_URL'] ||
+                             process.env['MONGO_PORT_27017_TCP_ADDR'] ||
                              'mongodb://localhost:27017' });
 
 const getKeyAuth = () => ({ key: process.env.KEYAUTH || 'bbEight' });
