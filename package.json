@@ -17,7 +17,9 @@
     "dev": "./node_modules/.bin/nodemon index.js",
     "test": "./node_modules/.bin/lab -l -v -m 60000 -r console --coverage -o stdout -r html -o coverage/coverage.html -r lcov -o coverage/lcov.info --pattern 'spec' src/test/index.spec.js src/modules/$1",
     "eslint": "./node_modules/.bin/eslint . --ext .js",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -35,7 +37,8 @@
     "joi": "^13.5.2",
     "lodash": "^4.17.19",
     "mongoose": "^5.7.7",
-    "vision": "^5.3.3"
+    "vision": "^5.3.3",
+    "snyk": "^1.316.2"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.1",
@@ -65,5 +68,6 @@
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "snyk": true
 }
