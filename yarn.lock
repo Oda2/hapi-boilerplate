@@ -1414,14 +1414,15 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-good-console@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/good-console/-/good-console-7.1.0.tgz#ebcf948d7adb8898145bdc76f2f7cdd64641b4a0"
+good-console@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/good-console/-/good-console-8.0.0.tgz#cc7262081f09fac5678b397e8847c194fbf85f64"
+  integrity sha512-+TIZjkwZhzaeqVQqLLVyMjbuwlBHQ9N4o1cp5VwVo9X68ilvqV0fVIv/ftRiTER5fPieWyyXymL4ZXWH8APtbg==
   dependencies:
-    hoek "4.x.x"
-    joi "12.x.x"
-    json-stringify-safe "5.0.x"
-    moment "2.20.x"
+    hoek "6.x.x"
+    joi "14.x.x"
+    json-stringify-safe "5.x.x"
+    moment "2.x.x"
 
 good-squeeze@^5.1.0:
   version "5.1.0"
@@ -1612,7 +1613,7 @@ heavy@6.x.x:
     hoek "5.x.x"
     joi "13.x.x"
 
-hoek@4.2.x, hoek@4.x.x:
+hoek@4.2.x:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
@@ -1981,19 +1982,20 @@ jest-docblock@^21.0.0:
   version "21.2.0"
   resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-21.2.0.tgz#51529c3b30d5fd159da60c27ceedc195faf8d414"
 
-joi@12.x.x:
-  version "12.0.0"
-  resolved "https://registry.yarnpkg.com/joi/-/joi-12.0.0.tgz#46f55e68f4d9628f01bbb695902c8b307ad8d33a"
-  dependencies:
-    hoek "4.x.x"
-    isemail "3.x.x"
-    topo "2.x.x"
-
 joi@13.x.x, joi@^13.1.2:
   version "13.4.0"
   resolved "https://registry.yarnpkg.com/joi/-/joi-13.4.0.tgz#afc359ee3d8bc5f9b9ba6cdc31b46d44af14cecc"
   dependencies:
     hoek "5.x.x"
+    isemail "3.x.x"
+    topo "3.x.x"
+
+joi@14.x.x:
+  version "14.3.1"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-14.3.1.tgz#164a262ec0b855466e0c35eea2a885ae8b6c703c"
+  integrity sha512-LQDdM+pkOrpAn4Lp+neNIFV3axv1Vna3j38bisbQhETPMANYRbFJFUyOZcOClYvM/hppMhGWuKSFEK9vjrB+bQ==
+  dependencies:
+    hoek "6.x.x"
     isemail "3.x.x"
     topo "3.x.x"
 
@@ -2060,7 +2062,7 @@ json-stable-stringify@1.x.x:
   dependencies:
     jsonify "~0.0.0"
 
-json-stringify-safe@5.0.x, json-stringify-safe@5.x.x, json-stringify-safe@~5.0.1:
+json-stringify-safe@5.x.x, json-stringify-safe@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
 
@@ -2352,9 +2354,10 @@ mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment@2.20.x:
-  version "2.20.1"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
+moment@2.x.x:
+  version "2.29.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.2.tgz#00910c60b20843bcba52d37d58c628b47b1f20e4"
+  integrity sha512-UgzG4rvxYpN15jgCmVJwac49h9ly9NurikMWGPdVxm8GZD6XjkKPxDTjQQ43gtGgnV3X0cAyWDdP2Wexoquifg==
 
 mongodb@3.3.3:
   version "3.3.3"
@@ -3447,12 +3450,6 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
-
-topo@2.x.x:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/topo/-/topo-2.0.2.tgz#cd5615752539057c0dc0491a621c3bc6fbe1d182"
-  dependencies:
-    hoek "4.x.x"
 
 topo@3.x.x:
   version "3.0.0"
